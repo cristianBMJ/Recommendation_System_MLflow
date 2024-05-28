@@ -1,2 +1,2 @@
 # recomedation_system_MLflow
-Simple Recomendation System use MLflow 
+Simple Recomendation System using MLflow 
