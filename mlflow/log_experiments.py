@@ -1,6 +1,7 @@
 import mlflow
 import mlflow.sklearn
-from surprise import Dataset, Reader, SVD # see dataset into surprise or use it others
+from surprise import Dataset, Reader, SVD , KNNBasic   
+# see dataset into surprise or use it others
 from surprise.model_selection import train_test_split
 from surprise import accuracy
 
@@ -25,8 +26,8 @@ trainset, testset = train_test_split(data, test_size=0.25)
 
 
 
-# Model
-algo = SVD()
+## Model SVD
+model_svd = SVD()
 mlflow.set_tracking_uri("sqlite:///mlflow.db")
 mlflow.set_experiment("Recommendation System")
 
@@ -36,17 +37,47 @@ with mlflow.start_run(run_name='Recomendation_System_SVD'):
 
 
     # Train and log model
-    algo.fit(trainset)
+    model_svd.fit(trainset)
 
     # Log metrics
-    predictions = algo.test(testset)
+    predictions = model_svd.test(testset)
+    
+    print( 'RMSE SVD:')
     rmse = accuracy.rmse(predictions)
 
     mlflow.set_tag("model_name", "SVD")
     mlflow.log_metric("rmse", rmse)
     mlflow.log_param("algorithm", "SVD")
     mlflow.log_param("test_size", 0.25)
-    mlflow.sklearn.log_model(algo, "model")
+    mlflow.sklearn.log_model(model_svd, "model")
+
+
+## Model KNN
+sim_options = {
+    'name': 'cosine',   # Cosine similarity
+    'user_based': True  # User-based collaborative filtering
+}
+
+# Define the KNNBasic algorithm
+model_knn = KNNBasic(sim_options=sim_options)
 
 
 
+with mlflow.start_run(run_name='Recomendation_System_KnnBase'):
+
+
+    # Train and log model
+    model_knn.fit(trainset)
+
+    # Log parameters, metrics and model
+    predictions = model_knn.test(testset)
+    print( 'RMSE KnnBase:')
+    rmse = accuracy.rmse(predictions)
+
+    mlflow.set_tag("model_name", "SVD")
+    mlflow.log_metric("rmse", rmse)
+    mlflow.log_param("algorithm", "SVD")
+    mlflow.log_param("test_size", 0.25)
+    mlflow.sklearn.log_model( model_knn, "model")
+
+print('\n')
