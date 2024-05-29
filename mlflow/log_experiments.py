@@ -1,15 +1,15 @@
+import pandas as pd 
+
 import mlflow
 import mlflow.sklearn
 from surprise import Dataset, Reader, SVD , KNNBasic   
-# see dataset into surprise or use it others
+# use it others datasets
 from surprise.model_selection import train_test_split
 from surprise import accuracy
 
 import mlflow 
 
 # demo dataset
-import pandas as pd 
-
 df = pd.DataFrame({
     'customer_id': [1, 2, 3, 4, 5],
     'item_id': [1, 2, 3, 4, 5],
