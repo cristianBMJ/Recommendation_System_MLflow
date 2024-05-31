@@ -25,6 +25,17 @@ data = Dataset.load_from_df(df[['customer_id', 'item_id', 'rating']], reader) # 
 trainset, testset = train_test_split(data, test_size=0.25)
 
 
+# Amazon's datasets
+
+file_train = "/home/cris/Data_Science/ML_engineer/workspace/Rec_System_MLflow/data/datasets_amazon/Automotive.train_5core_ATS.csv.gz"
+df_train = pd.read_csv(file_train)
+
+file_valid = "./data/datasets_amazon/Automotive.valid_5core_ATS.csv.gz" 
+df_train = pd.read_csv(file_valid)
+
+file_test = "./data/datasets_amazon/Automotive.test_5core_ATS.csv.gz" # path Valid
+df_train = pd.read_csv(file_test)
+
 
 ## Model SVD
 model_svd = SVD()
