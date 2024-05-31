@@ -46,8 +46,6 @@ mlflow.set_experiment("Recommendation System")
 
 with mlflow.start_run(run_name='Recomendation_System_SVD'):
     # Log parameters
-
-
     # Train and log model
     model_svd.fit(trainset)
 
