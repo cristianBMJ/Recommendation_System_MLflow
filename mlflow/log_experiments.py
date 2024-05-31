@@ -36,7 +36,6 @@ df_train = pd.read_csv(file_valid)
 file_test = "./data/datasets_amazon/Automotive.test_5core_ATS.csv.gz" # path Valid
 df_train = pd.read_csv(file_test)
 
-
 # now work amazon's datasets  
 
 ## Model SVD
