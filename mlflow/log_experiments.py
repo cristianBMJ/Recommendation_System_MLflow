@@ -37,6 +37,8 @@ file_test = "./data/datasets_amazon/Automotive.test_5core_ATS.csv.gz" # path Val
 df_train = pd.read_csv(file_test)
 
 
+# now work amazon's datasets  
+
 ## Model SVD
 model_svd = SVD()
 mlflow.set_tracking_uri("sqlite:///mlflow.db")
