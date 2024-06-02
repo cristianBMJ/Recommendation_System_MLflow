@@ -1,6 +1,10 @@
 import pandas as pd 
 
 import mlflow
+
+# Enable server
+# mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts
+
 import mlflow.sklearn
 from surprise import Dataset, Reader, SVD , KNNBasic   
 # use it others datasets
@@ -17,7 +21,7 @@ df = pd.DataFrame({
 }) 
 
 
-# Load the dataset
+# Load the demo dataset
 reader = Reader(rating_scale=(1, 5))
 data = Dataset.load_from_df(df[['customer_id', 'item_id', 'rating']], reader) # load dataset
 
@@ -27,21 +31,34 @@ trainset, testset = train_test_split(data, test_size=0.25)
 
 # Amazon's datasets
 
+file = "./data/datasets_amazon/Automotive_5_core.csv"
+df_full = pd.read_csv(file)
+
 file_train = "/home/cris/Data_Science/ML_engineer/workspace/Rec_System_MLflow/data/datasets_amazon/Automotive.train_5core_ATS.csv.gz"
-df_train = pd.read_csv(file_train)
+df_train_full = pd.read_csv(file_train)
 
 file_valid = "./data/datasets_amazon/Automotive.valid_5core_ATS.csv.gz" 
-df_train = pd.read_csv(file_valid)
+df_valid_full = pd.read_csv(file_valid)
 
 file_test = "./data/datasets_amazon/Automotive.test_5core_ATS.csv.gz" # path Valid
-df_train = pd.read_csv(file_test)
+df_test_full = pd.read_csv(file_test)
+
+
 
 # now work amazon's datasets  
+df = df_full.sample(frac=0.001)
+
+df_train = df_train_full.sample(frac=0.3)
+df_valid = df_valid_full.sample(frac=0.3)
+
+# Load datasets into Surprise format
+data = Dataset.load_from_df(df[['user_id', 'parent_asin', 'rating']], reader)
+trainset, testset = train_test_split(data, test_size=0.25)
 
 ## Model SVD
 model_svd = SVD()
 mlflow.set_tracking_uri("sqlite:///mlflow.db")
-mlflow.set_experiment("Recommendation System")
+mlflow.set_experiment("Recommender System")
 
 
 with mlflow.start_run(run_name='Recomendation_System_SVD'):
