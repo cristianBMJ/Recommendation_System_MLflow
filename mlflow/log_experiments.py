@@ -31,9 +31,12 @@ trainset, testset = train_test_split(data, test_size=0.25)
 
 # Amazon's datasets
 
+# full datasets: Automative Category 
 file = "./data/datasets_amazon/Automotive_5_core.csv"
 df_full = pd.read_csv(file)
 
+
+# Absolute Timestamp Slitting
 file_train = "/home/cris/Data_Science/ML_engineer/workspace/Rec_System_MLflow/data/datasets_amazon/Automotive.train_5core_ATS.csv.gz"
 df_train_full = pd.read_csv(file_train)
 
@@ -48,20 +51,30 @@ df_test_full = pd.read_csv(file_test)
 # now work amazon's datasets  
 df = df_full.sample(frac=0.001)
 
-df_train = df_train_full.sample(frac=0.3)
-df_valid = df_valid_full.sample(frac=0.3)
+df_train_sample = df_train_full.sample(frac=0.001)
+df_valid_sample = df_valid_full.sample(frac=0.001)
+
+print(df_train_sample.info() )
+
+df_train = Dataset.load_from_df(df_train_sample[['user_id', 'parent_asin', 'rating']], reader)
+df_valid = Dataset.load_from_df(df_valid_sample[['user_id', 'parent_asin', 'rating']], reader)
 
 # Load datasets into Surprise format
 data = Dataset.load_from_df(df[['user_id', 'parent_asin', 'rating']], reader)
 trainset, testset = train_test_split(data, test_size=0.25)
 
-## Model SVD
+
+
+
+# Recommender Systems Models RS
+
+# SVD Model
 model_svd = SVD()
+
 mlflow.set_tracking_uri("sqlite:///mlflow.db")
 mlflow.set_experiment("Recommender System")
 
-
-with mlflow.start_run(run_name='Recomendation_System_SVD'):
+with mlflow.start_run(run_name='RS_SVD'):
     # Log parameters
     # Train and log model
     model_svd.fit(trainset)
@@ -79,7 +92,7 @@ with mlflow.start_run(run_name='Recomendation_System_SVD'):
     mlflow.sklearn.log_model(model_svd, "model")
 
 
-## Model KNN
+## KNN Model 
 sim_options = {
     'name': 'cosine',   # Cosine similarity
     'user_based': True  # User-based collaborative filtering
@@ -90,7 +103,7 @@ model_knn = KNNBasic(sim_options=sim_options)
 
 
 
-with mlflow.start_run(run_name='Recomendation_System_KnnBase'):
+with mlflow.start_run(run_name='RS_KnnBase'): # very slow to large datasets
 
 
     # Train and log model
@@ -107,4 +120,8 @@ with mlflow.start_run(run_name='Recomendation_System_KnnBase'):
     mlflow.log_param("test_size", 0.25)
     mlflow.sklearn.log_model( model_knn, "model")
 
-print('\n')
+
+# Implementation ATS not compatible with SVD directly
+
+
+
