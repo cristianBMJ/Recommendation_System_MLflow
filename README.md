@@ -1,2 +1,8 @@
-# recomedation_system_MLflow
-Simple Recomendation System using MLflow 
+# Recommender Systems
+Simple Recommendation System using MLflow 
+
+# 🐍 Python Requirements
+
+´´´bash 
+poetry install 
+´´´
