@@ -40,10 +40,18 @@ models = {
     "CoClustering": (CoClustering, {'n_cltr_u': [3, 5], 'n_cltr_i': [3, 5], 'n_epochs': [20, 40]})
 }
 
-results = evaluate_models(data, models, param_grids=None)
+# Several Models
+#results = evaluate_models(data, models, param_grids=None) 
+
+# Only a model
+models_ =  { 
+    "SVD": (SVD, {'n_factors': [50], 'reg_all': [0.02]} )
+}
+
+results = evaluate_models(data, models_, param_grids=None)
 
 
-#results = evaluate_models(data, models)
+
 print(results)
 
 # Train Content-Based model
