@@ -1,5 +1,5 @@
 from surprise import Dataset, Reader, SVD, KNNBasic, NormalPredictor, SlopeOne, CoClustering
-from surprise.model_selection import train_test_split
+from surprise.model_selection import train_test_split, GridSearchCV
 from surprise import accuracy
 import mlflow
 
@@ -43,3 +43,10 @@ class ContentBasedRecommender(RecommenderSystem):
             mlflow.log_param("test_size", 0.25)
             mlflow.sklearn.log_model(self.model, "model")
         return rmse, mae
+
+def tune_hyperparameters(data, model_class, param_grid):
+    trainset = data.build_full_trainset()
+    gs = GridSearchCV(model_class, param_grid, measures=['rmse', 'mae'], cv=3)
+    gs.fit(data)
+    return gs.best_params['rmse']    
+
