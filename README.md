@@ -9,16 +9,14 @@ poetry install
 tasK: Add also requeriments 
 
 # Recommender System Project
-## Overview
+## Overview 
 
 This project aims to develop a modular recommender system using multiple algorithms. It includes data loading and preprocessing, model training, and evaluation using various collaborative and content-based filtering techniques.
 
 **Table of Contents**
 - [Overview](#overview)
-
-- [Project Structure](#Project Structure  )
-- [Setup and Installation](#Setup and Installation)
-- Configuration
+- [Structure](#Project Structure)
+- [Setup](#Setup and Installation)
 - [Usage](#Usage)
 - [Models](#Models)
 - [Evaluation](#Evaluation)
