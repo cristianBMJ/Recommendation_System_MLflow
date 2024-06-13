@@ -19,12 +19,10 @@ This project aims to develop a modular recommender system using multiple algorit
 - [Project Structure](#Project Structure  )
 - [Setup and Installation](#Setup and Installation)
 - Configuration
-- Usage
-Models
-Evaluation
-Results
-Contributing
-License
+- [Usage](#Usage)
+- [Models](#Models)
+- [Evaluation](#Evaluation)
+- License
 
 
 ## Project Structure
@@ -73,8 +71,16 @@ poetry shell
 
 ## Models
 
+This project implements the following recommendation algorithms:
+
+SVD (Singular Value Decomposition)
+KNNBasic (k-Nearest Neighbors)
+SlopeOne
+CoClustering
+Additionally, a content-based recommender system is included.
 
 ## Evaluation
 
+Model performance is evaluated using the functions provided in models/evaluator.py. The results are printed to the console and can be tracked using MLflow.
 
 ## Troubleshooting
