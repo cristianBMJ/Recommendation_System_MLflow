@@ -41,14 +41,16 @@ models = {
 }
 
 # Several Models
-#results = evaluate_models(data, models, param_grids=None) 
+
+results = evaluate_models(data, models, param_grids=None) 
 
 # Only a model
-models_ =  { 
-    "SVD": (SVD, {'n_factors': [50], 'reg_all': [0.02]} )
-}
 
-results = evaluate_models(data, models_, param_grids=None)
+# models_ =  { 
+#     "SVD": (SVD, {'n_factors': [50], 'reg_all': [0.02]} )
+# }
+
+# results = evaluate_models(data, models_, param_grids=None)
 
 
 

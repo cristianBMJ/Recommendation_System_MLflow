@@ -7,3 +7,4 @@ Simple Recommendation System using MLflow
 poetry install 
 ```
 tasK: Add also requeriments 
+
