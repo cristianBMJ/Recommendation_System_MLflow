@@ -16,8 +16,8 @@ This project aims to develop a modular recommender system using multiple algorit
 **Table of Contents**
 - [Overview](#overview)
 
-- Project Structure
-- Setup and Installation
+- [Project Structure](#Project Structure  )
+- [Setup and Installation](#Setup and Installation)
 - Configuration
 - Usage
 Models
@@ -42,3 +42,28 @@ License
 └── README.md                # Project documentation
 ```
 ## Setup and Installation
+
+1- Clone Repository:
+
+```bash 
+git clone https://github.com/your-username/recommender-system.git
+cd recommender-system
+```
+
+2- Install Poetry if you don't have it:
+
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+```
+
+3- Install the dependencies:
+
+```bash
+poetry install
+```
+
+4- Activate the virtual environment:
+
+```bash
+poetry shell
+```
