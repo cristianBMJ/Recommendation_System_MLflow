@@ -1,7 +1,7 @@
-from surprise import Dataset, Reader, SVD, KNNBasic, NormalPredictor, SlopeOne, CoClustering
+import mlflow
 from surprise.model_selection import train_test_split, GridSearchCV
 from surprise import accuracy
-import mlflow
+from surprise import NormalPredictor
 
 class RecommenderSystem:
     def __init__(self, data, model, model_name):

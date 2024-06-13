@@ -1,0 +1,28 @@
+# config/config.yaml
+
+data:
+  file_path: "./data/datasets_amazon/Automotive_5_core.csv"
+  sample_frac: 0.001
+
+models:
+  SVD:
+    model_class: surprise.SVD
+    param_grid:
+      n_factors: [50, 100, 200]
+      reg_all: [0.02, 0.05]
+  KNNBasic:
+    model_class: surprise.KNNBasic
+    param_grid:
+      k: [20, 40, 60]
+      sim_options:
+        name: ['cosine', 'msd']
+        user_based: [False, True]
+  SlopeOne:
+    model_class: surprise.SlopeOne
+    param_grid: {}
+  CoClustering:
+    model_class: surprise.CoClustering
+    param_grid:
+      n_cltr_u: [3, 5]
+      n_cltr_i: [3, 5]
+      n_epochs: [20, 40]
