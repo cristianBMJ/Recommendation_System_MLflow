@@ -1,6 +1,3 @@
-
-
-# Recommender System Project
 ## Overview 
 
 This project aims to develop a modular recommender system using multiple algorithms. It includes data loading and preprocessing, model training, and evaluation using various collaborative and content-based filtering techniques.
@@ -61,7 +58,9 @@ poetry install
 poetry shell
 ```
 
-# 🐍 Python Requirements
+5 - 🐍 Python Requirements
+
+
 
 
 ## Usage
