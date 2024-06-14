@@ -1,12 +1,4 @@
-# Recommender Systems
-Simple Recommendation System using MLflow 
 
-# 🐍 Python Requirements
-
-```bash 
-poetry install 
-```
-tasK: Add also requeriments 
 
 # Recommender System Project
 ## Overview 
@@ -26,6 +18,7 @@ This project aims to develop a modular recommender system using multiple algorit
 ## Project
 
 ```bash 
+
 ├── config
 │   └── config.yaml          # Configuration file
 ├── models
@@ -67,6 +60,9 @@ poetry install
 ```bash
 poetry shell
 ```
+
+# 🐍 Python Requirements
+
 
 ## Usage
 
