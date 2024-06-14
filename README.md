@@ -15,18 +15,25 @@ This project aims to develop a modular recommender system using multiple algorit
 ## Project
 
 ```bash 
-
-├── config
-│   └── config.yaml          # Configuration file
-├── models
-│   ├── data_loader.py       # Data loading and preprocessing
-│   ├── evaluator.py         # Model evaluation
-│   └── recommender.py       # Content-based recommender
-├── mlflow.db                # MLflow tracking database
-├── main.py                  # Main script to run the project
-├── pyproject.toml           # Poetry configuration file
-└── README.md                # Project documentation
+recommender_system/
+├── data/
+│   └── datasets_amazon/
+│       └── Automotive_5_core.csv
+├── models/
+│   ├── __init__.py
+│   ├── recommender.py              # Models and Content-based recommender
+│   ├── data_loader.py              # Data loading and preprocessing
+│   └── evaluator.py                # Model evaluation
+├── config/
+│   └── config.yaml                 # Configuration file
+├── streamlit_app/
+│   └── app.py
+├── main.py                         # Main script to run the project
+├── pyproject.toml                  # Poetry configuration file
+├── README.md                       # Project documentation
+└── mlflow.db                       # MLflow tracking database
 ```
+
 
 
 ## Setup
@@ -58,23 +65,36 @@ poetry install
 poetry shell
 ```
 
-5 - 🐍 Python Requirements
-
-
-
 
 ## Usage
+
+### Run 
+
+Run the main script to load data, train models, and evaluate their performance:
+
+```bash
+python Main.py
+```
+
+
+### Run Data Web apps with Streamlit
+
+Run the app.py script from folder `streamlip_app`:
+
+```bash
+export PYTHONPATH=$(pwd)
+streamlit run streamlit_app/app.py
+```
 
 
 ## Models
 
 This project implements the following recommendation algorithms:
 
-SVD (Singular Value Decomposition)
-KNNBasic (k-Nearest Neighbors)
-SlopeOne
-CoClustering
-Additionally, a content-based recommender system is included.
+SVD (Singular Value Decomposition),
+KNNBasic (k-Nearest Neighbors),
+SlopeOne,
+CoClustering. Additionally, a content-based recommender system is included.
 
 ## Evaluation
 
