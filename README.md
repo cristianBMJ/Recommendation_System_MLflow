@@ -15,8 +15,6 @@ This project aims to develop a modular recommender system using multiple algorit
 
 # **Table of Contents**
 - [Overview](#overview)
-- [Overview](#Project Structure )
-- [Setup and Installation](#Setup and Installation )
 - [Usage](#Usage)
 - [Models](#Models)
 - [Evaluation](#Evaluation)
