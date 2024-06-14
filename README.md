@@ -13,16 +13,16 @@ tasK: Add also requeriments
 
 This project aims to develop a modular recommender system using multiple algorithms. It includes data loading and preprocessing, model training, and evaluation using various collaborative and content-based filtering techniques.
 
-**#Table of Contents**
+# **Table of Contents**
 - [Overview](#overview)
-- [Overview](#Project Structure)
-- [Setup and Installation](#Setup and Installation)
+- [Overview](#Project Structure )
+- [Setup and Installation](#Setup and Installation )
 - [Usage](#Usage)
 - [Models](#Models)
 - [Evaluation](#Evaluation)
 - License
 
-## Project Structure
+## Project Structure 
 
 ```bash 
 ├── config
