@@ -15,13 +15,14 @@ This project aims to develop a modular recommender system using multiple algorit
 
 # **Table of Contents**
 - [Overview](#overview)
+- [Project](#Project)
 - [Usage](#Usage)
 - [Models](#Models)
 - [Evaluation](#Evaluation)
-- License
 
 
-## Project Structure 
+
+## Project
 
 ```bash 
 ├── config
