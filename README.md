@@ -22,6 +22,7 @@ This project aims to develop a modular recommender system using multiple algorit
 - [Evaluation](#Evaluation)
 - License
 
+
 ## Project Structure 
 
 ```bash 
@@ -36,7 +37,11 @@ This project aims to develop a modular recommender system using multiple algorit
 ├── pyproject.toml           # Poetry configuration file
 └── README.md                # Project documentation
 ```
+
+
 ## Setup and Installation
+
+
 
 1- Clone Repository:
 
