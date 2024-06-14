@@ -22,7 +22,6 @@ This project aims to develop a modular recommender system using multiple algorit
 - [Evaluation](#Evaluation)
 - License
 
-
 ## Project Structure
 
 ```bash 
