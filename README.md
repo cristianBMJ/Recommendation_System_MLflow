@@ -13,9 +13,9 @@ This project aims to develop a modular recommender system using multiple algorit
 - [Models](#Models)
 - [Evaluation](#Evaluation)
 
-
-
 ## Project
+
+Project Structure
 
 ```bash 
 recommender_system/
