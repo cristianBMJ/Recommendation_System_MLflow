@@ -1,12 +1,11 @@
-## Overview 
+# Overview 
 
 This project aims to develop a modular recommender system using multiple algorithms. It includes data loading and preprocessing, model training, and evaluation using various collaborative and content-based filtering techniques. Futher more, it includes a web app that allows users to interact with the recommender system.
 
 Dataset downloaded from: [Amazon-reviews-2023](https://amazon-reviews-2023.github.io/index.html#)
 
-## Table of Contents
 
-# **Table of Contents**
+## **Table of Contents**
 - [Overview](#overview)
 - [Project](#Project)
 - [Setup](#Setup)
