@@ -1,8 +1,8 @@
 # config/config.yaml
 
 data: 
-  file_path: "./data/Automotive_5_core.csv"
-  sample_frac: 0.0001
+  file_path: "data/Automotive_5_core.csv"
+  sample_frac: 0.1
 
 models:
   SVD:
