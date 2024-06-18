@@ -71,7 +71,15 @@ poetry shell
 
 ## Usage
 
-### Run 
+### Run the Tracking Server
+
+Run the MLflow tracking server using the following command:
+
+```bash
+mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts
+```
+
+### Run  
 
 Run the main script to load data, train models, and evaluate their performance:
 
