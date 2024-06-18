@@ -2,7 +2,7 @@
 
 data: 
   file_path: "data/Automative_5_core.csv"
-  sample_frac: 0.1
+  sample_frac: 0.9
 
 models:
   SVD:
