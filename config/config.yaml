@@ -1,8 +1,8 @@
 # config/config.yaml
 
-data:
-  file_path: "./data/datasets_amazon/Automotive_5_core.csv"
-  sample_frac: 0.001
+data: 
+  file_path: "data/Automative_5_core.csv"
+  sample_frac: 0.1
 
 models:
   SVD:
