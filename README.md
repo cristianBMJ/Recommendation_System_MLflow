@@ -46,7 +46,7 @@ recommender_system/
 1- Clone Repository:
 
 ```bash 
-git clone https://github.com/your-username/recommender-system.git
+git clone https://github.com/cristianBMJ/Recommendation_System_MLflow.git
 cd recommender-system
 ```
 
