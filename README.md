@@ -47,7 +47,7 @@ recommender_system/
 
 ```bash 
 git clone https://github.com/cristianBMJ/Recommendation_System_MLflow.git
-cd recommender-system
+cd Recommendation_System_MLflow
 ```
 
 2- Install Poetry if you don't have it:
