@@ -86,6 +86,7 @@ Run the main script to load data, train models, and evaluate their performance:
 ```bash
 python Main.py
 ```
+![alt text](mlflow_rs.png)
 
 
 ### Run Data Web apps with Streamlit
