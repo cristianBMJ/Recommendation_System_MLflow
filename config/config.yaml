@@ -1,7 +1,7 @@
 # config/config.yaml
 
 data: 
-  file_path: "data/Automotive_5_core.csv"
+  file_path: "data/Automative_5_core.csv"
   sample_frac: 0.1
 
 models:
