@@ -97,6 +97,7 @@ Run the app.py script from folder `streamlip_app`:
 export PYTHONPATH=$(pwd)
 streamlit run streamlit_app/app.py
 ```
+![alt text](streamlit_rs.png)
 
 
 ## Models
