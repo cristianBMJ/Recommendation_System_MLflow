@@ -114,3 +114,5 @@ CoClustering. Additionally, a content-based recommender system is included.
 Model performance is evaluated using the functions provided in models/evaluator.py. The results are printed to the console and can be tracked using MLflow.
 
 ## Troubleshooting
+
+- Modified implemantion content-based filtering techniques:
