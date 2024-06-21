@@ -115,4 +115,9 @@ Model performance is evaluated using the functions provided in models/evaluator.
 
 ## Troubleshooting
 
-- Modified implemantion content-based filtering techniques:
+- Splitting Data:
+
+The provided data splitting methods (Leave-One-Out and Absolute Timestamp) are not directly supported by the Surprise library due to its data format requirements.  In the next step, we will explore preprocessing techniques to make your data compatible with Surprise.
+
+
+
