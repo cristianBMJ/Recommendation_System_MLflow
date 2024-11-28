@@ -86,6 +86,7 @@ Run the main script to load data, train models, and evaluate their performance:
 ```bash
 python Main.py
 ```
+![alt text](mlflow_rs.png)
 
 
 ### Run Data Web apps with Streamlit
@@ -96,6 +97,7 @@ Run the app.py script from folder `streamlip_app`:
 export PYTHONPATH=$(pwd)
 streamlit run streamlit_app/app.py
 ```
+![alt text](streamlit_rs.png)
 
 
 ## Models
@@ -112,3 +114,10 @@ CoClustering. Additionally, a content-based recommender system is included.
 Model performance is evaluated using the functions provided in models/evaluator.py. The results are printed to the console and can be tracked using MLflow.
 
 ## Troubleshooting
+
+Splitting Data:
+
+The provided data splitting methods (Leave-One-Out and Absolute Timestamp) are not directly supported by the Surprise library due to its data format requirements.  In the next step, we will explore preprocessing techniques to make your data compatible with Surprise.
+
+
+

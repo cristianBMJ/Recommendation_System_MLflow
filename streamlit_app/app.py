@@ -31,7 +31,7 @@ def load_data(file_path, sample_frac):
 st.write("## Data Loading")
 file_path = st.text_input("Dataset file path", data_config['file_path'])
 sample_frac = st.slider("Sample Fraction", min_value=0.01, max_value=1.00, value=data_config['sample_frac'])
-data = load_data(file_path, sample_frac*0.001)
+data = load_data(file_path, sample_frac)
 
 st.write("Data loaded successfully!")
 
