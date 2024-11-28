@@ -56,7 +56,9 @@ if st.button("Train Content-Based Model"):
     with st.spinner("Training content-based model..."):
         content_based_recommender = ContentBasedRecommender(data)
         rmse, mae = content_based_recommender.train_model()
-        st.write(f"Content-Based Model trained with RMSE: {rmse}, MAE: {mae}")
+        st.write(f"Content-Based Model trained")
+        st.write(f"RMSE: {round(rmse, 3)}")
+        st.write(f"MAE: {round(mae, 3)}")
 
 # Visualize MLflow experiments
 st.write("## MLflow Experiments")
