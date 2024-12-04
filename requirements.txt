@@ -6,4 +6,4 @@ scikit-surprise==1.1.4
 mlflow==2.1.0
 # pyyaml==5.4.1
 # llvmlite==0.38.1
-
+pyarrow==9.0.0  # Use a version that is compatible with Python 3.12
