@@ -97,7 +97,7 @@ Run the app.py script from folder `streamlip_app`:
 export PYTHONPATH=$(pwd)
 streamlit run streamlit_app/app.py
 ```
-![alt text](streamlit_rs.png)
+![alt text](mlflow_recommeder_registers.png)
 
 
 ## Models
