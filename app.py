@@ -10,7 +10,8 @@ from surprise import SVD, KNNBasic, SlopeOne, CoClustering
 import yaml
 
 mlflow.set_tracking_uri("databricks")
-mlflow.login()
+mlflow.login(username="cristianj3006@gmail.com") #, password=os.getenv("DATABRICKS_PASSWORD"))
+
 mlflow.set_experiment("/Users/cristianj3006@gmail.com/MLFlow_with_streamlit")
 
 # Set up MLflow tracking URI
