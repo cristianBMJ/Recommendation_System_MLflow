@@ -8,14 +8,39 @@ from models.evaluator import evaluate_models
 from models.recommender import ContentBasedRecommender, RecommenderSystem
 from surprise import SVD, KNNBasic, SlopeOne, CoClustering
 import yaml
-
-mlflow.set_tracking_uri("databricks")
-mlflow.login("cristianj3006@gmail.com") #, password=os.getenv("DATABRICKS_PASSWORD"))
-
-mlflow.set_experiment("/Users/cristianj3006@gmail.com/MLFlow_with_streamlit")
-
+import os
 # Set up MLflow tracking URI
 # mlflow.set_tracking_uri("http://localhost:5000")
+
+# Streamlit app title
+st.title("Databricks Authentication")
+
+# Input fields for Databricks credentials
+databricks_host = st.text_input("Databricks Host (e.g., https://community.cloud.databricks.com/)", "https://community.cloud.databricks.com/")
+username = st.text_input("Username (Your Databricks CE email address)", "")
+password = st.text_input("Password (Your Databricks CE password)", "", type="password")
+
+# Button to authenticate
+if st.button("Login to Databricks"):
+    try:
+        # Set the tracking URI
+        mlflow.set_tracking_uri("databricks")
+
+        # Set the environment variables for login
+        os.environ["DATABRICKS_HOST"] = databricks_host
+        os.environ["DATABRICKS_USERNAME"] = username
+        os.environ["DATABRICKS_PASSWORD"] = password
+
+        # Log in to Databricks (this will prompt for credentials if not set)
+        mlflow.login()  # No arguments needed
+
+        # Optionally, you can set the experiment after successful login
+        mlflow.set_experiment("/Users/" + username + "/MLFlow_with_streamlit")
+
+        st.success("Successfully logged in to Databricks!")
+    except Exception as e:
+        st.error(f"Login failed: {e}")
+
 
 # Streamlit app
 st.title("Recommender System with MLflow")
