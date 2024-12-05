@@ -9,9 +9,12 @@ from models.recommender import ContentBasedRecommender, RecommenderSystem
 from surprise import SVD, KNNBasic, SlopeOne, CoClustering
 import yaml
 
+mlflow.set_tracking_uri("databricks")
+mlflow.login()
+mlflow.set_experiment("/Users/cristianj3006@gmail.com/MLFlow_with_streamlit")
 
 # Set up MLflow tracking URI
-mlflow.set_tracking_uri("http://localhost:5000")
+# mlflow.set_tracking_uri("http://localhost:5000")
 
 # Streamlit app
 st.title("Recommender System with MLflow")
